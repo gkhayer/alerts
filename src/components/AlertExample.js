@@ -22,7 +22,19 @@ export const AlertExample = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const id = Date.now();
-    console.log(formInput);
+    props.dispatch({
+      type: "ADD_ALERT",
+      payload: { ...formInput, id },
+    });
+    setTimeout(
+      () => {
+        props.dispatch({
+          type: "DELETE_ALERT",
+          payload: { id },
+        });
+      },
+      formInput.timeLimit ? formInput.timeLimit * 1000 : 10000
+    );
   };
   const handleInput = (e) => {
     const { name, value } = e.target;
