@@ -1,4 +1,6 @@
 import React from "react";
+import { Stack } from "@mui/material";
+import { AlertComponent } from "./AlertComponent";
 
 export const useAlertReducer = (state, action) => {
   switch (action.type) {
@@ -11,6 +13,20 @@ export const useAlertReducer = (state, action) => {
   }
 };
 export const AlertManager = (props) => {
-  console.log(props.state);
-  return <></>;
+  return (
+    <Stack
+      sx={{
+        top: 0,
+        right: 0,
+        position: "absolute",
+        width: "30%",
+        m: ".5rem",
+      }}
+      spacing={1}
+    >
+      {props.state?.map((alert) => (
+        <AlertComponent key={alert.id} id={alert.id} alert={alert} />
+      ))}
+    </Stack>
+  );
 };
