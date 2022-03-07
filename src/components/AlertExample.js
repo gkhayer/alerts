@@ -50,7 +50,7 @@ export const AlertExample = (props) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        width: "60%",
+        width: "55%",
         "& .MuiTextField-root": { m: 1, width: "12rem" },
 
         background: "#bce3ca",
@@ -72,7 +72,7 @@ export const AlertExample = (props) => {
             label="Title"
             variant="outlined"
             name="title"
-            defaultValue={formInput.title}
+            value={formInput.title}
             onChange={handleInput}
           />
           <TextField
@@ -80,7 +80,7 @@ export const AlertExample = (props) => {
             label="Description"
             variant="outlined"
             name="text"
-            defaultValue={formInput.text}
+            value={formInput.text}
             onChange={handleInput}
           />
           <TextField
@@ -89,7 +89,7 @@ export const AlertExample = (props) => {
             name="link"
             type="url"
             placeholder="https://example.com"
-            defaultValue={formInput.link}
+            value={formInput.link}
             onChange={handleInput}
           />
           <TextField
@@ -99,7 +99,7 @@ export const AlertExample = (props) => {
             label="Time Limit"
             variant="outlined"
             name="timeLimit"
-            defaultValue={formInput.timeLimit}
+            value={formInput.timeLimit}
             onChange={handleInput}
             InputProps={{
               endAdornment: (
